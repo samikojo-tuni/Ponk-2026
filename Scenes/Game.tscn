@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dv2hpnjbct7o0"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Paddle.tscn" id="1_paddle"]
+[ext_resource type="PackedScene" path="res://Scenes/Ball.tscn" id="2_ball"]
+[ext_resource type="PackedScene" path="res://Scenes/Wall.tscn" id="3_wall"]
+
+[node name="Game" type="Node2D" unique_id=1021165916]
+
+[node name="Background" type="Polygon2D" parent="." unique_id=1245652106]
+color = Color(0.055, 0.09, 0.13, 1)
+polygon = PackedVector2Array(0, 0, 960, 0, 960, 540, 0, 540)
+
+[node name="CenterLine" type="Line2D" parent="." unique_id=810710162]
+points = PackedVector2Array(480, 12, 480, 528)
+width = 2.0
+default_color = Color(0.21, 0.34, 0.39, 1)
+
+[node name="TopWall" parent="." unique_id=1714721149 instance=ExtResource("3_wall")]
+position = Vector2(480, 6)
+
+[node name="BottomWall" parent="." unique_id=2097861786 instance=ExtResource("3_wall")]
+position = Vector2(480, 534)
+
+[node name="LeftPaddle" parent="." unique_id=2137061884 instance=ExtResource("1_paddle")]
+position = Vector2(64, 270)
+
+[node name="RightPaddle" parent="." unique_id=1273576600 instance=ExtResource("1_paddle")]
+position = Vector2(896, 270)
+
+[node name="Ball" parent="." unique_id=2031694867 instance=ExtResource("2_ball")]
+position = Vector2(480, 270)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=601184963]
+
+[node name="Score" type="Label" parent="HUD" unique_id=642728289]
+offset_left = 360.0
+offset_top = 30.0
+offset_right = 600.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.82, 0.94, 0.96, 1)
+theme_override_font_sizes/font_size = 36
+text = "0    :    0"
+horizontal_alignment = 1
+
+[node name="StarterNotice" type="Label" parent="HUD" unique_id=983595624]
+offset_left = 180.0
+offset_top = 494.0
+offset_right = 780.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(0.58, 0.72, 0.75, 1)
+theme_override_font_sizes/font_size = 16
+text = "Starter scene - implement the game to begin playing"
+horizontal_alignment = 1

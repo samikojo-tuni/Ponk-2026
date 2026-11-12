@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[sub_resource type="CircleShape2D" id="BallShape"]
+radius = 8.0
+
+[node name="Ball" type="CharacterBody2D"]
+
+[node name="Visual" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, -8, 5.657, -5.657, 8, 0, 5.657, 5.657, 0, 8, -5.657, 5.657, -8, 0, -5.657, -5.657)
+color = Color(1, 0.78, 0.36, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("BallShape")

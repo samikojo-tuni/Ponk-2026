@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[sub_resource type="RectangleShape2D" id="PaddleShape"]
+size = Vector2(16, 96)
+
+[node name="Paddle" type="CharacterBody2D"]
+
+[node name="Visual" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-8, -48, 8, -48, 8, 48, -8, 48)
+color = Color(0.82, 0.94, 0.96, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("PaddleShape")
